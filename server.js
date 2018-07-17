@@ -49,7 +49,15 @@ app.get('/about', (request, response) => {
   });
 });
 
-// bad - send back json with errorMessage
+
+ app.get('/projects', (request, response) => {
+   response.render('projects.hbs', {
+      pageTitle: 'Projects page',
+      welcomeMessage: 'Welcome to my page!'
+   });
+ });
+
+
 app.get('/bad', (request, response) => {
   response.send({
     error: 'Cannot establish connection to server,'
